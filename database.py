@@ -5,10 +5,10 @@ from sqlalchemy.orm import sessionmaker # a function that produces database sess
 DATABASE_URL = "sqlite:///./grades.db" # This string tells the SQLAlchemy where exactly our database lives -> "./" the same folder
 
 # the engine is the actual connection to the database. It uses the URL to know where to connect
-engine = create_engine(DATABASE_URL, connect_args={"check_same_thread: False"})
+engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 
 # SessionLocal - blueprint for creating session
-SessionLocal = sessionmaker(autoflush=False, autocomit=False, bind =engine)
+SessionLocal = sessionmaker(autoflush=False, autocommit=False, bind =engine)
 
 # Base is the parent class for all our database models. class Student(Base)
 # SQLAlchemy knows Student is database table
